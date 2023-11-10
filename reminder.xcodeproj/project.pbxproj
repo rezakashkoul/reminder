@@ -9,13 +9,18 @@
 /* Begin PBXBuildFile section */
 		F74A58ED2AFE6D0900DE3D1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A58EC2AFE6D0900DE3D1F /* AppDelegate.swift */; };
 		F74A58EF2AFE6D0900DE3D1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A58EE2AFE6D0900DE3D1F /* SceneDelegate.swift */; };
-		F74A58F12AFE6D0900DE3D1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A58F02AFE6D0900DE3D1F /* ViewController.swift */; };
+		F74A58F12AFE6D0900DE3D1F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A58F02AFE6D0900DE3D1F /* HomeViewController.swift */; };
 		F74A58F42AFE6D0A00DE3D1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74A58F22AFE6D0A00DE3D1F /* Main.storyboard */; };
 		F74A58F62AFE6D1200DE3D1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F74A58F52AFE6D1200DE3D1F /* Assets.xcassets */; };
 		F74A58F92AFE6D1200DE3D1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74A58F72AFE6D1200DE3D1F /* LaunchScreen.storyboard */; };
 		F74A59042AFE6D1300DE3D1F /* reminderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A59032AFE6D1300DE3D1F /* reminderTests.swift */; };
 		F74A590E2AFE6D1300DE3D1F /* reminderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A590D2AFE6D1300DE3D1F /* reminderUITests.swift */; };
 		F74A59102AFE6D1300DE3D1F /* reminderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A590F2AFE6D1300DE3D1F /* reminderUITestsLaunchTests.swift */; };
+		F74A591D2AFE6D3100DE3D1F /* StoryBoarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A591C2AFE6D3100DE3D1F /* StoryBoarded.swift */; };
+		F74A591F2AFE6D4000DE3D1F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A591E2AFE6D4000DE3D1F /* Coordinator.swift */; };
+		F74A59232AFE6FF100DE3D1F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A59222AFE6FF100DE3D1F /* MainCoordinator.swift */; };
+		F74A59252AFE739500DE3D1F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A59242AFE739500DE3D1F /* BaseViewController.swift */; };
+		F74A59272AFE776000DE3D1F /* NewReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A59262AFE776000DE3D1F /* NewReminderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +44,7 @@
 		F74A58E92AFE6D0900DE3D1F /* reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F74A58EC2AFE6D0900DE3D1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F74A58EE2AFE6D0900DE3D1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F74A58F02AFE6D0900DE3D1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F74A58F02AFE6D0900DE3D1F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F74A58F32AFE6D0A00DE3D1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F74A58F52AFE6D1200DE3D1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F74A58F82AFE6D1200DE3D1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +54,11 @@
 		F74A59092AFE6D1300DE3D1F /* reminderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reminderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F74A590D2AFE6D1300DE3D1F /* reminderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reminderUITests.swift; sourceTree = "<group>"; };
 		F74A590F2AFE6D1300DE3D1F /* reminderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reminderUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F74A591C2AFE6D3100DE3D1F /* StoryBoarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoarded.swift; sourceTree = "<group>"; };
+		F74A591E2AFE6D4000DE3D1F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F74A59222AFE6FF100DE3D1F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		F74A59242AFE739500DE3D1F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F74A59262AFE776000DE3D1F /* NewReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReminderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +111,11 @@
 			children = (
 				F74A58EC2AFE6D0900DE3D1F /* AppDelegate.swift */,
 				F74A58EE2AFE6D0900DE3D1F /* SceneDelegate.swift */,
-				F74A58F02AFE6D0900DE3D1F /* ViewController.swift */,
+				F74A59212AFE6FB000DE3D1F /* ViewControllers */,
+				F74A59202AFE6FA900DE3D1F /* Coordinator */,
 				F74A58F22AFE6D0A00DE3D1F /* Main.storyboard */,
-				F74A58F52AFE6D1200DE3D1F /* Assets.xcassets */,
 				F74A58F72AFE6D1200DE3D1F /* LaunchScreen.storyboard */,
+				F74A58F52AFE6D1200DE3D1F /* Assets.xcassets */,
 				F74A58FA2AFE6D1200DE3D1F /* Info.plist */,
 			);
 			path = reminder;
@@ -125,6 +136,26 @@
 				F74A590F2AFE6D1300DE3D1F /* reminderUITestsLaunchTests.swift */,
 			);
 			path = reminderUITests;
+			sourceTree = "<group>";
+		};
+		F74A59202AFE6FA900DE3D1F /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F74A59222AFE6FF100DE3D1F /* MainCoordinator.swift */,
+				F74A591E2AFE6D4000DE3D1F /* Coordinator.swift */,
+				F74A591C2AFE6D3100DE3D1F /* StoryBoarded.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F74A59212AFE6FB000DE3D1F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F74A59242AFE739500DE3D1F /* BaseViewController.swift */,
+				F74A58F02AFE6D0900DE3D1F /* HomeViewController.swift */,
+				F74A59262AFE776000DE3D1F /* NewReminderViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +289,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F74A58F12AFE6D0900DE3D1F /* ViewController.swift in Sources */,
+				F74A58F12AFE6D0900DE3D1F /* HomeViewController.swift in Sources */,
+				F74A59272AFE776000DE3D1F /* NewReminderViewController.swift in Sources */,
+				F74A59232AFE6FF100DE3D1F /* MainCoordinator.swift in Sources */,
 				F74A58ED2AFE6D0900DE3D1F /* AppDelegate.swift in Sources */,
+				F74A591F2AFE6D4000DE3D1F /* Coordinator.swift in Sources */,
 				F74A58EF2AFE6D0900DE3D1F /* SceneDelegate.swift in Sources */,
+				F74A59252AFE739500DE3D1F /* BaseViewController.swift in Sources */,
+				F74A591D2AFE6D3100DE3D1F /* StoryBoarded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,15 +483,16 @@
 				INFOPLIST_FILE = reminder/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = reminder.reminder;
+				PRODUCT_BUNDLE_IDENTIFIER = reminder.reminder.rezakashkoul;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -475,15 +512,16 @@
 				INFOPLIST_FILE = reminder/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = reminder.reminder;
+				PRODUCT_BUNDLE_IDENTIFIER = reminder.reminder.rezakashkoul;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
