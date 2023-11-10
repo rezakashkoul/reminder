@@ -18,14 +18,14 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
     }
     
     func start() {
-        let vc = HomeViewController.instantiate(.main)
+        let vc = HomeViewController.instantiate(.Main)
         navigationController.delegate = self
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
     
     func showNewReminder() {
-        let vc = NewReminderViewController.instantiate(.main)
+        let vc = NewReminderViewController.instantiate(.Main)
         vc.coordinator = self        
         navigationController.present(vc, animated: true)
     }

@@ -9,6 +9,9 @@ import UIKit
 
 class NewReminderViewController: BaseViewController {
 
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +25,8 @@ extension NewReminderViewController {
     
     private func setupViews() {
         view.backgroundColor = .white
+        textField.dropShadowAndCornerRadious(.regular, shadowOpacity: 0.2)
+        textView.dropShadowAndCornerRadious(.regular, shadowOpacity: 0.2)
     }
 }
 

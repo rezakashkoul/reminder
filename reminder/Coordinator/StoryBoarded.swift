@@ -7,14 +7,6 @@
 
 import UIKit
 
-enum StoryBoardTitle: String {
-    case main
-    
-    fileprivate var instance: UIStoryboard {
-        return UIStoryboard(name: rawValue, bundle: Bundle.main)
-    }
-}
-
 protocol StoryBoarded {
     static func instantiate(_ storyBoardTitle: StoryBoardTitle) -> Self
 }
@@ -23,17 +15,19 @@ extension StoryBoarded where Self: UIViewController {
     
     static func instantiate(_ storyBoardTitle: StoryBoardTitle) -> Self {
         let storyboard = storyBoardTitle.instance
-        let viewController = storyboard.instantiateViewController(withIdentifier: self.identifier) as! Self
-        return viewController
+        let fullName = NSStringFromClass(self)
+        let className = fullName.components(separatedBy: ".")[1]
+        return storyboard.instantiateViewController(withIdentifier: className) as! Self
     }
+
 }
 
-extension UIViewController {
+enum StoryBoardTitle: String {
+    case Main
     
-    static var identifier: String {
-        return String(describing: self)
+    fileprivate var instance: UIStoryboard {
+        return UIStoryboard(name: rawValue, bundle: Bundle.main)
     }
 }
-
 
 
