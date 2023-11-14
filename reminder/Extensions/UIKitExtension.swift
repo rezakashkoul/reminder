@@ -53,3 +53,34 @@ extension UIView {
         }
     }
 }
+
+extension UITableView {
+
+    func showEmptyMessage() {
+        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
+        messageLabel.text = "There's nothing to show ;("
+        messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
+        messageLabel.sizeToFit()
+        self.backgroundView = messageLabel
+        self.separatorStyle = .none
+    }
+    
+    func hideEmptyMessage() {
+        self.backgroundView = nil
+        self.separatorStyle = .none
+    }
+}
+
+extension UITableViewCell {
+
+    static var identifier: String {
+        return String(describing: self)
+    }
+    
+    static func register(for tableView: UITableView)  {
+        let cellName = String(describing: self)
+        let cellNib = UINib(nibName: cellName, bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: cellName)
+    }
+}

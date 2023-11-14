@@ -23,7 +23,7 @@ class BaseViewController: UIViewController, StoryBoarded {
 extension BaseViewController {
     
     private func setupViews() {
-        view.backgroundColor = .brown
+        view.backgroundColor = .systemYellow
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 }

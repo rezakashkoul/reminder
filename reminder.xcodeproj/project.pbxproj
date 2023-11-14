@@ -21,11 +21,12 @@
 		F74A59232AFE6FF100DE3D1F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A59222AFE6FF100DE3D1F /* MainCoordinator.swift */; };
 		F74A59252AFE739500DE3D1F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A59242AFE739500DE3D1F /* BaseViewController.swift */; };
 		F74A59272AFE776000DE3D1F /* NewReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A59262AFE776000DE3D1F /* NewReminderViewController.swift */; };
-		F74A59292AFE8B9300DE3D1F /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A59282AFE8B9300DE3D1F /* UIViewExtension.swift */; };
+		F74A59292AFE8B9300DE3D1F /* UIKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A59282AFE8B9300DE3D1F /* UIKitExtension.swift */; };
 		F74A592B2AFE8CA100DE3D1F /* HomeTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A592A2AFE8CA100DE3D1F /* HomeTableViewDataSource.swift */; };
 		F74A59302AFE8E3000DE3D1F /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A592E2AFE8E3000DE3D1F /* TableViewCell.swift */; };
 		F74A59312AFE8E3000DE3D1F /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F74A592F2AFE8E3000DE3D1F /* TableViewCell.xib */; };
-		F74A59342AFE90A200DE3D1F /* TableViewCellExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A59332AFE90A200DE3D1F /* TableViewCellExtention.swift */; };
+		F77091442AFEEF230047973E /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77091432AFEEF230047973E /* Reminder.swift */; };
+		F7F251532AFECDBE00770A67 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F251522AFECDBE00770A67 /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,11 +65,12 @@
 		F74A59222AFE6FF100DE3D1F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		F74A59242AFE739500DE3D1F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F74A59262AFE776000DE3D1F /* NewReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReminderViewController.swift; sourceTree = "<group>"; };
-		F74A59282AFE8B9300DE3D1F /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		F74A59282AFE8B9300DE3D1F /* UIKitExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtension.swift; sourceTree = "<group>"; };
 		F74A592A2AFE8CA100DE3D1F /* HomeTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewDataSource.swift; sourceTree = "<group>"; };
 		F74A592E2AFE8E3000DE3D1F /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		F74A592F2AFE8E3000DE3D1F /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
-		F74A59332AFE90A200DE3D1F /* TableViewCellExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellExtention.swift; sourceTree = "<group>"; };
+		F77091432AFEEF230047973E /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		F7F251522AFECDBE00770A67 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			children = (
 				F74A58EC2AFE6D0900DE3D1F /* AppDelegate.swift */,
 				F74A58EE2AFE6D0900DE3D1F /* SceneDelegate.swift */,
+				F77091452AFEEF290047973E /* Model */,
 				F74A59212AFE6FB000DE3D1F /* ViewControllers */,
 				F74A59322AFE8E4000DE3D1F /* TableViewCell */,
 				F74A59202AFE6FA900DE3D1F /* Coordinator */,
@@ -153,8 +156,8 @@
 		F74A59202AFE6FA900DE3D1F /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				F74A59222AFE6FF100DE3D1F /* MainCoordinator.swift */,
 				F74A591E2AFE6D4000DE3D1F /* Coordinator.swift */,
+				F74A59222AFE6FF100DE3D1F /* MainCoordinator.swift */,
 				F74A591C2AFE6D3100DE3D1F /* StoryBoarded.swift */,
 			);
 			path = Coordinator;
@@ -164,8 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				F74A59242AFE739500DE3D1F /* BaseViewController.swift */,
-				F74A592D2AFE8E0B00DE3D1F /* Home */,
 				F74A59262AFE776000DE3D1F /* NewReminderViewController.swift */,
+				F74A592D2AFE8E0B00DE3D1F /* Home */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -173,8 +176,8 @@
 		F74A592C2AFE8DEF00DE3D1F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F74A59282AFE8B9300DE3D1F /* UIViewExtension.swift */,
-				F74A59332AFE90A200DE3D1F /* TableViewCellExtention.swift */,
+				F7F251522AFECDBE00770A67 /* DateExtension.swift */,
+				F74A59282AFE8B9300DE3D1F /* UIKitExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -195,6 +198,14 @@
 				F74A592E2AFE8E3000DE3D1F /* TableViewCell.swift */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		F77091452AFEEF290047973E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F77091432AFEEF230047973E /* Reminder.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,15 +341,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F74A58F12AFE6D0900DE3D1F /* HomeViewController.swift in Sources */,
+				F77091442AFEEF230047973E /* Reminder.swift in Sources */,
 				F74A59272AFE776000DE3D1F /* NewReminderViewController.swift in Sources */,
 				F74A59232AFE6FF100DE3D1F /* MainCoordinator.swift in Sources */,
 				F74A592B2AFE8CA100DE3D1F /* HomeTableViewDataSource.swift in Sources */,
 				F74A58ED2AFE6D0900DE3D1F /* AppDelegate.swift in Sources */,
+				F7F251532AFECDBE00770A67 /* DateExtension.swift in Sources */,
 				F74A591F2AFE6D4000DE3D1F /* Coordinator.swift in Sources */,
 				F74A59302AFE8E3000DE3D1F /* TableViewCell.swift in Sources */,
 				F74A58EF2AFE6D0900DE3D1F /* SceneDelegate.swift in Sources */,
-				F74A59342AFE90A200DE3D1F /* TableViewCellExtention.swift in Sources */,
-				F74A59292AFE8B9300DE3D1F /* UIViewExtension.swift in Sources */,
+				F74A59292AFE8B9300DE3D1F /* UIKitExtension.swift in Sources */,
 				F74A59252AFE739500DE3D1F /* BaseViewController.swift in Sources */,
 				F74A591D2AFE6D3100DE3D1F /* StoryBoarded.swift in Sources */,
 			);

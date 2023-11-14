@@ -9,19 +9,24 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     
+    @IBOutlet weak var parentView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var explanationLabel: UILabel!
     
-    private var config: TableViewCell.Config!
+    private var reminder: Reminder!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
-    func setup(with config: Config) {
-        self.config = config
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        parentView.dropShadowAndCornerRadious(.large, shadowOpacity: 0.2)
+    }
+    
+    func setup(with reminder: Reminder) {
+        self.reminder = reminder
         setupViews()
     }
 }
@@ -30,16 +35,14 @@ class TableViewCell: UITableViewCell {
 extension TableViewCell {
     
     private func setupViews() {
-        dateLabel.text = config.date
-        titleLabel.text = config.title
-        explanationLabel.text = config.explanation
+        selectionStyle = .none
+        setupLabels()
     }
-}
-
-//MARK: - Configuration:
-extension TableViewCell {
     
-    struct Config {
-        var date, title, explanation: String
+    private func setupLabels() {
+        let date = reminder.date
+        dateLabel.text = date.getPrettyDate() + " - " + date.getPrettyTime()
+        titleLabel.text = reminder.title
+        explanationLabel.text = reminder.explanation
     }
 }
