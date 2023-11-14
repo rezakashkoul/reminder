@@ -12,9 +12,10 @@ protocol NewReminderViewControllerDelegate: AnyObject {
 }
 
 class NewReminderViewController: BaseViewController {
-
+    
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBAction func saveButtonAction(_ sender: Any) {
         saveAction()
@@ -25,17 +26,59 @@ class NewReminderViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupViews()
     }
+}
+
+//MARK: - Setup Functions:
+extension NewReminderViewController {
+    
+    private func setupViews() {
+        setupTextField()
+        setupTextView()
+        setupKeyboardAppearance()
+    }
+    
+    private func setupTextField() {
+        textField.dropShadowAndCornerRadious(.regular, shadowOpacity: 0.2)
+        textField.text = reminder?.title
+    }
+    
+    private func setupTextView() {
+        textView.dropShadowAndCornerRadious(.regular, shadowOpacity: 0.2)
+        textView.text = reminder?.explanation
+    }
+    
+    private func setupKeyboardAppearance() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func keyboardWillShow(notification:NSNotification) {
+        guard let userInfo = notification.userInfo else { return }
+        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        var contentInset:UIEdgeInsets = self.scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height + 20
+        scrollView.contentInset = contentInset
+    }
+    
+    @objc private func keyboardWillHide(notification:NSNotification) {
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInset
+    }
+}
+
+//MARK: - Setup Actions:
+extension NewReminderViewController {
     
     private func saveAction() {
         if let title = textField.text, !title.isEmpty, let explanation = textView.text, !explanation.isEmpty {
             setReminder(title: title, explanation: explanation)
         }
     }
-
-
+    
     private func setReminder(title: String, explanation: String) {
         self.reminder = Reminder(id: reminder != nil ? self.reminder.id : UUID(),
                                  date: Date(),
@@ -45,15 +88,3 @@ class NewReminderViewController: BaseViewController {
         dismiss(animated: true)
     }
 }
-
-//MARK: - Setup Functions:
-extension NewReminderViewController {
-    
-    private func setupViews() {
-        textField.dropShadowAndCornerRadious(.regular, shadowOpacity: 0.2)
-        textView.dropShadowAndCornerRadious(.regular, shadowOpacity: 0.2)
-        textField.text = reminder?.title
-        textView.text = reminder?.explanation
-    }
-}
-

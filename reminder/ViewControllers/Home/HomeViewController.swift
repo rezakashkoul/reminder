@@ -16,6 +16,7 @@ class HomeViewController: BaseViewController, UITableViewDelegate, NewReminderVi
             setupTableViewContainerMessage()
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -53,7 +54,6 @@ extension HomeViewController {
         coordinator?.showNewReminder(reminder: reminder, delegate: self)
     }
 }
-    
 
 //MARK: - Actions:
 extension HomeViewController {
