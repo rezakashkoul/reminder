@@ -29,6 +29,12 @@ class NewReminderViewController: BaseViewController {
         
         setupViews()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        deregisterKeyboard()
+    }
 }
 
 //MARK: - Setup Functions:
@@ -37,7 +43,7 @@ extension NewReminderViewController {
     private func setupViews() {
         setupTextField()
         setupTextView()
-        setupKeyboardAppearance()
+        registerKeyboard()
     }
     
     private func setupTextField() {
@@ -50,7 +56,7 @@ extension NewReminderViewController {
         textView.text = reminder?.explanation
     }
     
-    private func setupKeyboardAppearance() {
+    private func registerKeyboard() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -67,6 +73,11 @@ extension NewReminderViewController {
     @objc private func keyboardWillHide(notification:NSNotification) {
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         scrollView.contentInset = contentInset
+    }
+    
+    private func deregisterKeyboard() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 }
 
