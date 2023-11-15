@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F744EEAB2B0511F800F6E060 /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F744EEAA2B0511F800F6E060 /* UserDefaultsExtensions.swift */; };
 		F74A58ED2AFE6D0900DE3D1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A58EC2AFE6D0900DE3D1F /* AppDelegate.swift */; };
 		F74A58EF2AFE6D0900DE3D1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A58EE2AFE6D0900DE3D1F /* SceneDelegate.swift */; };
 		F74A58F12AFE6D0900DE3D1F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A58F02AFE6D0900DE3D1F /* HomeViewController.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F744EEAA2B0511F800F6E060 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
 		F74A58E92AFE6D0900DE3D1F /* reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F74A58EC2AFE6D0900DE3D1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F74A58EE2AFE6D0900DE3D1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				F7F251522AFECDBE00770A67 /* DateExtension.swift */,
+				F744EEAA2B0511F800F6E060 /* UserDefaultsExtensions.swift */,
 				F74A59282AFE8B9300DE3D1F /* UIKitExtension.swift */,
 			);
 			path = Extensions;
@@ -344,6 +347,7 @@
 				F77091442AFEEF230047973E /* Reminder.swift in Sources */,
 				F74A59272AFE776000DE3D1F /* NewReminderViewController.swift in Sources */,
 				F74A59232AFE6FF100DE3D1F /* MainCoordinator.swift in Sources */,
+				F744EEAB2B0511F800F6E060 /* UserDefaultsExtensions.swift in Sources */,
 				F74A592B2AFE8CA100DE3D1F /* HomeTableViewDataSource.swift in Sources */,
 				F74A58ED2AFE6D0900DE3D1F /* AppDelegate.swift in Sources */,
 				F7F251532AFECDBE00770A67 /* DateExtension.swift in Sources */,

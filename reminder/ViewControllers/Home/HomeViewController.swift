@@ -11,14 +11,12 @@ class HomeViewController: BaseViewController, UITableViewDelegate, NewReminderVi
 
     @IBOutlet weak var tableView: UITableView!
     
-    var dataSource = HomeTableViewDataSource() {
-        didSet {
-            setupTableViewContainerMessage()
-        }
-    }
+    var dataSource = HomeTableViewDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dataSource.reminders = UserDefaults.standard.retrieve()
         setupViews()
     }
 }
@@ -74,6 +72,7 @@ extension HomeViewController {
             dataSource.reminders.append(reminder)
         }
         dataSource.reminders = dataSource.reminders.sorted(by: {$0.date > $1.date})
+        UserDefaults.standard.save(dataSource.reminders)
         DispatchQueue.main.async { [self] in
             setupTableViewContainerMessage()
             tableView.reloadData()

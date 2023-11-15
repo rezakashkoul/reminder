@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Reminder {
+struct Reminder: Codable {
+    
     let id: UUID
     var date = Date()
     var title, explanation: String

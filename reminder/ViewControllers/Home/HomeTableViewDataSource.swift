@@ -34,6 +34,7 @@ class HomeTableViewDataSource: NSObject, UITableViewDataSource {
         if editingStyle == .delete {
             reminders.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .middle)
+            UserDefaults.standard.save(reminders)
             reminders.isEmpty ? tableView.showEmptyMessage() : tableView.hideEmptyMessage()
         }
     }
