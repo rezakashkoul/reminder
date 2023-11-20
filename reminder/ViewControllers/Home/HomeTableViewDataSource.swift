@@ -8,8 +8,14 @@
 import UIKit
 
 class HomeTableViewDataSource: NSObject, UITableViewDataSource {
-    
+
     var reminders: [Reminder] = []
+
+    override init() {
+        super.init()
+        reminders = UserDefaults.standard.retrieve()
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return reminders.count
@@ -33,9 +39,10 @@ class HomeTableViewDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             reminders.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .middle)
+            tableView.deleteRows(at: [indexPath], with: .fade)
             UserDefaults.standard.save(reminders)
             reminders.isEmpty ? tableView.showEmptyMessage() : tableView.hideEmptyMessage()
+            tableView.reloadWithAnimation()
         }
     }
 }

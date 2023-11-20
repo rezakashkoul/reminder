@@ -168,9 +168,9 @@
 		F74A59212AFE6FB000DE3D1F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F74A592D2AFE8E0B00DE3D1F /* Home */,
 				F74A59242AFE739500DE3D1F /* BaseViewController.swift */,
 				F74A59262AFE776000DE3D1F /* NewReminderViewController.swift */,
-				F74A592D2AFE8E0B00DE3D1F /* Home */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

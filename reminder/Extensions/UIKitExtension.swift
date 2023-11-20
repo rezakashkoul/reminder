@@ -55,7 +55,7 @@ extension UIView {
 }
 
 extension UITableView {
-
+    
     func showEmptyMessage() {
         let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
         messageLabel.text = "There's nothing to show ;("
@@ -70,10 +70,26 @@ extension UITableView {
         self.backgroundView = nil
         self.separatorStyle = .none
     }
+    
+    func reloadWithAnimation() {
+        self.reloadData()
+        let tableViewHeight = self.bounds.size.height
+        let cells = self.visibleCells
+        var delayCounter = 0
+        for cell in cells {
+            cell.transform = CGAffineTransform(translationX: 0, y: tableViewHeight)
+        }
+        for cell in cells {
+            UIView.animate(withDuration: 0.8, delay: 0.5 * Double(delayCounter), usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [.curveEaseInOut, .beginFromCurrentState], animations: {
+                cell.transform = CGAffineTransform.identity
+            }, completion: nil)
+            delayCounter += 1
+        }
+    }
 }
 
 extension UITableViewCell {
-
+    
     static var identifier: String {
         return String(describing: self)
     }

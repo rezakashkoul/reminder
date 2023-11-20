@@ -21,7 +21,7 @@ class NewReminderViewController: BaseViewController {
         saveAction()
     }
     
-    var reminder: Reminder!
+    var reminder: Reminder?
     weak var delegate: NewReminderViewControllerDelegate?
     
     override func viewDidLoad() {
@@ -91,11 +91,11 @@ extension NewReminderViewController {
     }
     
     private func setReminder(title: String, explanation: String) {
-        self.reminder = Reminder(id: reminder != nil ? self.reminder.id : UUID(),
-                                 date: Date(),
-                                 title: title,
-                                 explanation: explanation)
-        delegate?.updateTableView(reminder)
+        if let reminder = reminder {
+            delegate?.updateTableView(Reminder(id: reminder.id,date: Date(), title: title, explanation: explanation))
+        } else {
+            delegate?.updateTableView(Reminder(id: UUID(),date: Date(), title: title, explanation: explanation))
+        }
         dismiss(animated: true)
     }
 }

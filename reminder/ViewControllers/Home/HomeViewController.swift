@@ -16,7 +16,6 @@ class HomeViewController: BaseViewController, UITableViewDelegate, NewReminderVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataSource.reminders = UserDefaults.standard.retrieve()
         setupViews()
     }
 }
@@ -36,6 +35,7 @@ extension HomeViewController {
         tableView.dataSource = dataSource
         tableView.separatorStyle = .none
         setupTableViewContainerMessage()
+        tableView.reloadWithAnimation()
     }
     
     private func setupTableViewContainerMessage() {
@@ -75,7 +75,7 @@ extension HomeViewController {
         UserDefaults.standard.save(dataSource.reminders)
         DispatchQueue.main.async { [self] in
             setupTableViewContainerMessage()
-            tableView.reloadData()
+            tableView.reloadWithAnimation()
         }
     }
 }
